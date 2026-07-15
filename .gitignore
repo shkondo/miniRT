@@ -1,0 +1,37 @@
+# Build artifacts
+obj/
+miniRT
+*.o
+*.a
+*.dylib
+*.so
+
+# macOS MiniLibX (Swift) build outputs
+*.swiftmodule
+*.swiftdoc
+*.swiftsourceinfo
+*.abi.json
+
+# Verification harness output
+.verify_core_bin
+.verify_parse_bin
+.vp
+*.dSYM/
+/tmp_render*
+
+# Not part of the submission: dev-only helper scripts and headless
+# verification harness (non-norm C files)
+tools/
+
+# Not part of the submission: docs (subject PDF, personal notes, Obsidian
+# vault symlink). Keep only sample.png, referenced by README.md.
+docs/*
+!docs/sample.png
+
+# Editor / tooling config
+.vscode/
+.claude/
+compile_flags.txt
+
+# macOS
+.DS_Store
