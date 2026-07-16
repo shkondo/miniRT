@@ -12,12 +12,6 @@
 
 #include "minirt.h"
 
-/*
-** Platform specific teardown. mlx_destroy_display() and freeing the display
-** handle only exist on the Linux (X11) MiniLibX. The macOS (Metal) port has
-** no such call, so platform_cleanup is a no-op there. Preprocessor branching
-** lives at file scope (norm forbids it inside a function body).
-*/
 #ifdef __linux__
 
 void	platform_cleanup(void *mlx)

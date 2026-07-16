@@ -20,11 +20,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/*
-** Platform specific key/event codes. MiniLibX exposes different keycodes on
-** macOS (Cocoa/Metal) and Linux (X11), and mlx_destroy_display only exists on
-** Linux. Everything else in our code is identical across both platforms.
-*/
 # ifdef __APPLE__
 #  define KEY_ESC 53
 # else
@@ -43,10 +38,6 @@
 # define SHADOW_BIAS 1e-4
 # define INF 1e30
 # define PI 3.14159265358979323846
-
-/*
-** ------------------------------ data types -------------------------------
-*/
 
 typedef struct s_vec3
 {
@@ -75,12 +66,6 @@ typedef enum e_obj_type
 	OBJ_CYLINDER
 }					t_obj_type;
 
-/*
-** A single object node. Fields are reused per type:
-**   sphere   : pos = center, radius
-**   plane    : pos = a point, axis = normal
-**   cylinder : pos = center, axis = direction, radius, height
-*/
 typedef struct s_object
 {
 	t_obj_type		type;
@@ -127,9 +112,6 @@ typedef struct s_scene
 	t_object		*objects;
 }					t_scene;
 
-/*
-** Result of a ray/object intersection. normal always faces the incoming ray.
-*/
 typedef struct s_hit
 {
 	int				hit;
@@ -171,9 +153,6 @@ typedef struct s_app
 	t_scene			scene;
 }					t_app;
 
-/*
-** ---- vector math ----
-*/
 t_vec3				vec(double x, double y, double z);
 t_vec3				vec_add(t_vec3 a, t_vec3 b);
 t_vec3				vec_sub(t_vec3 a, t_vec3 b);
@@ -191,16 +170,10 @@ double				clampd(double v, double lo, double hi);
 t_vec3				vec_at(t_ray ray, double t);
 t_vec3				face_normal(t_vec3 n, t_vec3 dir);
 
-/*
-** ---- color ----
-*/
 t_color				color_new(int r, int g, int b);
 t_vec3				color_to_vec(t_color c);
 int					vec_to_rgb(t_vec3 c);
 
-/*
-** ---- window ----
-*/
 int					init_window(t_app *app);
 void				put_pixel(t_img *img, int x, int y, int color);
 int					close_app(t_app *app);
@@ -208,17 +181,11 @@ void				setup_hooks(t_app *app);
 int					key_hook(int keycode, t_app *app);
 void				platform_cleanup(void *mlx);
 
-/*
-** ---- render ----
-*/
 void				render_scene(t_app *app);
 int					ray_color(t_scene *scene, t_ray ray);
 void				setup_camera(t_camera *cam);
 t_ray				make_ray(t_camera *cam, double px, double py);
 
-/*
-** ---- intersection -----
-*/
 t_hit				trace_ray(t_scene *scene, t_ray ray);
 int					hit_object(t_object *obj, t_ray ray, t_hit *hit);
 int					hit_sphere(t_object *obj, t_ray ray, t_hit *hit);
@@ -229,16 +196,10 @@ int					hit_cyl_caps(t_object *obj, t_ray ray, t_hit *hit);
 int					solve_quad(t_quad *q, double *t);
 int					solve_quad2(t_quad *q, double *t0, double *t1);
 
-/*
-** ---- lighting ----
-*/
 t_vec3				compute_lighting(t_scene *scene, t_hit hit);
 int					in_shadow(t_scene *scene, t_hit hit, t_vec3 ldir,
 						double ldist);
 
-/*
-** ---- parsing ----
-*/
 int					parse_scene(char *path, t_scene *scene);
 int					parse_line(char *line, t_scene *scene);
 int					parse_ambient(char **tok, t_scene *scene);
@@ -254,17 +215,11 @@ int					parse_color(char *s, t_color *out);
 int					parse_ratio(char *s, double *out);
 int					parse_unit(char *s, t_vec3 *out);
 
-/*
-** ---- scene ----
-*/
 void				init_scene(t_scene *scene);
 int					add_object(t_scene *scene, t_object obj);
 void				free_scene(t_scene *scene);
 int					validate_scene(t_scene *scene);
 
-/*
-** ---- utils ----
-*/
 int					error_msg(char *msg);
 void				error_exit(t_app *app, char *msg);
 size_t				ft_strlen(const char *s);
