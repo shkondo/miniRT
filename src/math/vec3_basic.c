@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vec3_basic.c                                       :+:      :+:    :+:   */
 /*                                                      +:+ +:+         +:+   */
-/*   By: djspright <djspright@student.42tokyo.jp>        +#+  +:+       +#+   */
+/*   By: shkondo <shkondo@student.42tokyo.jp>            +#+  +:+       +#+   */
 /*                                                        +#+#+#+#+#+   +#+   */
-/*   Created: 2025/06/04 00:00:00 by djspright                   #+#    #+#   */
-/*   Updated: 2025/06/04 00:00:00 by djspright            ###   ########.fr   */
+/*   Created: 2026/06/04 18:43:42 by shkondo                     #+#    #+#   */
+/*   Updated: 2026/07/09 22:54:05 by shkondo              ###   ########.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 

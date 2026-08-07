@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lighting.c                                         :+:      :+:    :+:   */
 /*                                                      +:+ +:+         +:+   */
-/*   By: djspright <djspright@student.42tokyo.jp>        +#+  +:+       +#+   */
+/*   By: shkondo <shkondo@student.42tokyo.jp>            +#+  +:+       +#+   */
 /*                                                        +#+#+#+#+#+   +#+   */
-/*   Created: 2025/06/04 00:00:00 by djspright                   #+#    #+#   */
-/*   Updated: 2025/06/04 00:00:00 by djspright            ###   ########.fr   */
+/*   Created: 2026/06/27 21:15:54 by shkondo                     #+#    #+#   */
+/*   Updated: 2026/07/09 05:15:27 by shkondo              ###   ########.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ t_vec3	compute_lighting(t_scene *scene, t_hit hit)
 			scene->ambient.ratio);
 	diffuse = vec(0, 0, 0);
 	if (scene->light.set)
-		diffuse = diffuse_term(scene, hit,
-				vec_sub(scene->light.pos, hit.point));
+		diffuse = diffuse_term(scene, hit, vec_sub(scene->light.pos,
+					hit.point));
 	light = vec_add(ambient, diffuse);
 	return (vec_mul(base, light));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split_set.c                                        :+:      :+:    :+:   */
 /*                                                      +:+ +:+         +:+   */
-/*   By: djspright <djspright@student.42tokyo.jp>        +#+  +:+       +#+   */
+/*   By: shkondo <shkondo@student.42tokyo.jp>            +#+  +:+       +#+   */
 /*                                                        +#+#+#+#+#+   +#+   */
-/*   Created: 2025/06/04 00:00:00 by djspright                   #+#    #+#   */
-/*   Updated: 2025/06/04 00:00:00 by djspright            ###   ########.fr   */
+/*   Created: 2026/06/05 07:05:33 by shkondo                     #+#    #+#   */
+/*   Updated: 2026/06/29 07:38:39 by shkondo              ###   ########.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
