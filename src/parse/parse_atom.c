@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_atom.c                                       :+:      :+:    :+:   */
 /*                                                      +:+ +:+         +:+   */
-/*   By: djspright <djspright@student.42tokyo.jp>        +#+  +:+       +#+   */
+/*   By: shkondo <shkondo@student.42tokyo.jp>            +#+  +:+       +#+   */
 /*                                                        +#+#+#+#+#+   +#+   */
-/*   Created: 2025/06/04 00:00:00 by djspright                   #+#    #+#   */
-/*   Updated: 2025/06/04 00:00:00 by djspright            ###   ########.fr   */
+/*   Created: 2026/06/04 06:21:17 by shkondo                     #+#    #+#   */
+/*   Updated: 2026/07/19 21:18:52 by shkondo              ###   ########.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	parse_unit(char *s, t_vec3 *out)
 		return (1);
 	if (v.z < -1.0 || v.z > 1.0)
 		return (1);
-	if (v.x == 0.0 && v.y == 0.0 && v.z == 0.0)
+	if (vec_len(v) < EPSILON)
 		return (1);
 	*out = vec_norm(v);
 	return (0);
