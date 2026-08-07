@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_object.c                                     :+:      :+:    :+:   */
 /*                                                      +:+ +:+         +:+   */
-/*   By: djspright <djspright@student.42tokyo.jp>        +#+  +:+       +#+   */
+/*   By: shkondo <shkondo@student.42tokyo.jp>            +#+  +:+       +#+   */
 /*                                                        +#+#+#+#+#+   +#+   */
-/*   Created: 2025/06/04 00:00:00 by djspright                   #+#    #+#   */
-/*   Updated: 2025/06/04 00:00:00 by djspright            ###   ########.fr   */
+/*   Created: 2026/06/05 08:30:20 by shkondo                     #+#    #+#   */
+/*   Updated: 2026/06/30 22:12:49 by shkondo              ###   ########.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 

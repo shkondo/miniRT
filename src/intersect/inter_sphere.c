@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter_sphere.c                                     :+:      :+:    :+:   */
 /*                                                      +:+ +:+         +:+   */
-/*   By: djspright <djspright@student.42tokyo.jp>        +#+  +:+       +#+   */
+/*   By: shkondo <shkondo@student.42tokyo.jp>            +#+  +:+       +#+   */
 /*                                                        +#+#+#+#+#+   +#+   */
-/*   Created: 2025/06/04 00:00:00 by djspright                   #+#    #+#   */
-/*   Updated: 2025/06/04 00:00:00 by djspright            ###   ########.fr   */
+/*   Created: 2026/07/13 18:09:41 by shkondo                     #+#    #+#   */
+/*   Updated: 2026/07/14 06:04:04 by shkondo              ###   ########.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,7 @@ int	hit_sphere(t_object *obj, t_ray ray, t_hit *hit)
 	hit->hit = 1;
 	hit->t = t;
 	hit->point = vec_at(ray, t);
-	hit->normal = face_normal(vec_norm(vec_sub(hit->point, obj->pos)),
-			ray.dir);
+	hit->normal = face_normal(vec_norm(vec_sub(hit->point, obj->pos)), ray.dir);
 	hit->color = obj->color;
 	return (1);
 }

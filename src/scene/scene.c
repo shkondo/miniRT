@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene.c                                            :+:      :+:    :+:   */
 /*                                                      +:+ +:+         +:+   */
-/*   By: djspright <djspright@student.42tokyo.jp>        +#+  +:+       +#+   */
+/*   By: shkondo <shkondo@student.42tokyo.jp>            +#+  +:+       +#+   */
 /*                                                        +#+#+#+#+#+   +#+   */
-/*   Created: 2025/06/04 00:00:00 by djspright                   #+#    #+#   */
-/*   Updated: 2025/06/04 00:00:00 by djspright            ###   ########.fr   */
+/*   Created: 2026/07/06 08:49:21 by shkondo                     #+#    #+#   */
+/*   Updated: 2026/07/19 07:44:38 by shkondo              ###   ########.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,25 @@ void	init_scene(t_scene *scene)
 	scene->objects = NULL;
 }
 
+static int	count_objects(t_object *obj)
+{
+	int	count;
+
+	count = 0;
+	while (obj)
+	{
+		count++;
+		obj = obj->next;
+	}
+	return (count);
+}
+
 int	add_object(t_scene *scene, t_object obj)
 {
 	t_object	*node;
 
+	if (count_objects(scene->objects) >= MAX_OBJECTS)
+		return (0);
 	node = malloc(sizeof(t_object));
 	if (!node)
 		return (0);

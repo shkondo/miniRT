@@ -55,8 +55,11 @@ On **macOS** the bundled `minilibx_mms_20200219` (Metal/Swift) is compiled into
 
 The program takes exactly one argument: a scene file ending in `.rt`.
 Ready-made scenes live in `scenes/` (e.g. `sphere.rt`, `plane.rt`,
-`cylinder.rt`, `all.rt`, `multi.rt`, `minimal.rt`). Intentionally broken scenes
-for testing error handling are under `scenes/bad/`.
+`cylinder.rt`, `all.rt`, `multi.rt`, `minimal.rt`, and two review showcases:
+`cylinder_inside.rt` — the camera inside a cylinder looking at the bottom cap
+to demonstrate normal flipping, and `plane_edge_on.rt` — a plane seen exactly
+edge-on, perceivable only through the shadow line on a half-buried sphere).
+Intentionally broken scenes for testing error handling are under `scenes/bad/`.
 
 Controls:
 
@@ -78,6 +81,10 @@ may appear in any order. `A`, `C` and `L` may be declared only once.
 | `cy` | cylinder  | `cy <x,y,z> <ax,ay,az> <diameter> <height> <r,g,b>`         |
 
 Colours are integers in `[0,255]`; coordinates and sizes are floating-point.
+Input validation is strict: direction vectors must have a length of at least
+`1e-6` (degenerate near-zero vectors are rejected), every numeric value is
+limited to an absolute value of `1e9`, and a scene may contain at most **20
+objects** (`sp`/`pl`/`cy` combined); anything else exits with `Error`.
 
 ## Mathematics
 

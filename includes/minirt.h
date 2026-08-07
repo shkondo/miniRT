@@ -2,11 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   minirt.h                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: shkondo <shkondo@student.42tokyo.jp>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 00:00:00 by djspright         #+#    #+#             */
-/*   Updated: 2026/07/15 15:23:07 by shkondo          ###   ########.fr       */
+/*                                                      +:+ +:+         +:+   */
+/*   By: shkondo <shkondo@student.42tokyo.jp>            +#+  +:+       +#+   */
+/*                                                        +#+#+#+#+#+   +#+   */
+/*   Created: 2026/06/04 21:45:15 by shkondo                     #+#    #+#   */
+/*   Updated: 2026/07/20 08:41:26 by shkondo              ###   ########.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@
 # define SHADOW_BIAS 1e-4
 # define INF 1e30
 # define PI 3.14159265358979323846
+# define MAX_OBJECTS 20
+# define MAX_NUM 1e9
 
 typedef struct s_vec3
 {

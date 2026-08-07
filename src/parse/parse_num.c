@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_num.c                                        :+:      :+:    :+:   */
 /*                                                      +:+ +:+         +:+   */
-/*   By: djspright <djspright@student.42tokyo.jp>        +#+  +:+       +#+   */
+/*   By: shkondo <shkondo@student.42tokyo.jp>            +#+  +:+       +#+   */
 /*                                                        +#+#+#+#+#+   +#+   */
-/*   Created: 2025/06/04 00:00:00 by djspright                   #+#    #+#   */
-/*   Updated: 2025/06/04 00:00:00 by djspright            ###   ########.fr   */
+/*   Created: 2026/07/10 05:20:45 by shkondo                     #+#    #+#   */
+/*   Updated: 2026/07/20 19:24:11 by shkondo              ###   ########.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ int	ft_atod(char *s, double *out)
 	parse_int_part(&s, &val, &digits);
 	parse_frac_part(&s, &val, &digits);
 	if (*s != '\0' || digits == 0)
+		return (1);
+	if (val > MAX_NUM)
 		return (1);
 	*out = val * (double)sign;
 	return (0);
