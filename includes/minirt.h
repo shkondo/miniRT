@@ -38,7 +38,7 @@
 # define SHADOW_BIAS 1e-4
 # define INF 1e30
 # define PI 3.14159265358979323846
-# define MAX_OBJECTS 10
+# define MAX_OBJECTS 20
 # define MAX_NUM 1e9
 
 typedef struct s_vec3

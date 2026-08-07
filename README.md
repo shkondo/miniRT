@@ -83,7 +83,7 @@ may appear in any order. `A`, `C` and `L` may be declared only once.
 Colours are integers in `[0,255]`; coordinates and sizes are floating-point.
 Input validation is strict: direction vectors must have a length of at least
 `1e-6` (degenerate near-zero vectors are rejected), every numeric value is
-limited to an absolute value of `1e9`, and a scene may contain at most **10
+limited to an absolute value of `1e9`, and a scene may contain at most **20
 objects** (`sp`/`pl`/`cy` combined); anything else exits with `Error`.
 
 ## Mathematics
